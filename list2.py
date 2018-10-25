@@ -57,6 +57,7 @@ def main():
     test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
     test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
     test(remove_adjacent([]), [])
+    test(remove_adjacent([1,2,3,1,1,3,3,4,4,1,2,3]),[1,2,3,1,3,4,1,2,3])
 
     print('linear_merge')
     test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
