@@ -37,7 +37,21 @@ def remove_adjacent(nums):
 # pass of both lists.
 def linear_merge(list1, list2):
     """merging sorted lists into a sorted list while iterating through both"""
-    return sorted(list1 + list2)
+    total_len = len(list1) + len(list2)
+    index_list1 = index_list2 = 0
+    result = []
+    while len(result) < total_len:
+        if len(list1) == index_list1:
+            result += list2[index_list2:]
+        elif len(list2) == index_list2:
+            result += list1[index_list1:]
+        elif list1[index_list1] < list2[index_list2]:
+            result.append(list1[index_list1])
+            index_list1 += 1
+        else:
+            result.append(list2[index_list2])
+            index_list2 += 1
+    return result
 
 
 
